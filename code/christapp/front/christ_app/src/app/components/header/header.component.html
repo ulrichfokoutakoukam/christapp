@@ -1,0 +1,54 @@
+<mat-toolbar class="p-1">
+  <mat-toolbar-row class="border p-0 py-4 rounded my-2">
+    <button mat-button class="profile-icon " >  
+      <div class="dropdown text-end">
+        <a href="#" class="d-block link-body-emphasis text-decoration-none" aria-expanded="false">
+          <img [src]="appImg" alt="logo"  class="logo-icon rounded-circle shadow">
+        </a>
+      </div>
+    </button>
+
+    <span class="header-spacer"></span>
+
+    
+    <button mat-mini-fab class="header-icon mat-elevator-z20"  aria-label="Example icon-button with share icon">
+      <mat-icon class="header">menu</mat-icon>
+    </button>
+    <button mat-mini-fab class="header-icon mat-elevator-z20"  aria-label="Example icon-button with share icon 2">
+      <mat-icon>message</mat-icon>
+    </button>
+    <button mat-mini-fab class="header-icon mat-elevator-z20"  aria-label="Example icon-button with share icon 2">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <button mat-mini-fab 
+    [matBadge]="notificationsNumber" matBadgePosition="after" matBadgeColor="warn"  [matBadgeHidden]="notificationHidden" 
+    class="header-icon mat-elevator-z20"  
+    aria-label="Example icon-button with share icon 2">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-button [matMenuTriggerFor]="menu" class="mx-2">  
+      <div class="dropdown text-end">
+        <a href="#" class="d-block link-body-emphasis text-decoration-none" aria-expanded="false">
+          <img [src]="profileImg" alt="mdo" width="45" height="40" 
+          class="profile-icon rounded shadow border border-2 border-primary">
+        </a>
+      </div>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <img  [src]="profileImg" alt="mdo" width="45" height="45" 
+            class="profile-img border border-2 border-primary me-2">
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+    
+  </mat-toolbar-row>
+</mat-toolbar>

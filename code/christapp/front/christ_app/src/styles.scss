@@ -1,0 +1,140 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "@angular/material/prebuilt-themes/purple-green.css";
+
+@import "@angular/material/core/theming/_theming.scss";
+
+/**
+background #edf1f5  rgb(237, 241, 245)
+red notification #d6293d rgb(214, 41, 61)
+blue not hover #e6effc rgb(230, 239, 252)
+blue $primary: #0e6fed; 
+**/
+$primary: #0e6fed; 
+
+
+/* For use in src/lib/core/theming/_palette.scss */
+$primary-palette: (
+    50 : #e2eefd,
+    100 : #b7d4fa,
+    200 : #87b7f6,
+    300 : #569af2,
+    400 : #3285f0,
+    500 : #0e6fed,
+    600 : #0c67eb,
+    700 : #0a5ce8,
+    800 : #0852e5,
+    900 : #0440e0,
+    A100 : #ffffff,
+    A200 : #d4deff,
+    A400 : #a1b6ff,
+    A700 : #88a2ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+/* For use in src/lib/core/theming/_palette.scss */
+$accent-pallete: (
+    50 : #fdfdfe,
+    100 : #fafbfc,
+    200 : #f6f8fa,
+    300 : #f2f5f8,
+    400 : #f0f3f7,
+    500 : #edf1f5,
+    600 : #ebeff4,
+    700 : #e8edf2,
+    800 : #e5ebf0,
+    900 : #e0e7ee,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+
+
+
+$my-primary: mat.define-palette($primary-palette, 500);
+$my-accent: mat.define-palette($accent-pallete, 900);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+
+@include mat.all-component-themes($my-theme);
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+body{
+  background-color: #edf1f5 ;
+}
+
+
+/**
+*used to add new contact to add as friend
+**/
+.profile-img{
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+/**
+*used during message or post comment
+**/
+.profile-img-mini{
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
